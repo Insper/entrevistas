@@ -17,10 +17,17 @@ class LinkedList:
                 self.root = node
             prev = node
 
+    def __str__(self):
+        node = linked_list.root
+        s = ''
+        while node:
+            if s:
+                s += '->'
+            s += str(node.value)
+            node = node.next
+        return s
+
 
 if __name__ == "__main__":
     linked_list = LinkedList(range(10))
-    node = linked_list.root
-    while node:
-        print(node.value)
-        node = node.next
+    print(linked_list)
